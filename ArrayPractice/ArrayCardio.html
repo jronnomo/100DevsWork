@@ -65,15 +65,11 @@
     //THE WAY YOU CAN TEST YOUR STEPS IS BY ACTUALLY VISITING THE SITE AND RUNNING STEPS IN CONSOLE. DON'T NEED HTML FILE
     //.includes and .textContent are required here
     //Array.from is needed to transform the NodeList to an Array. The Spread ... or Array.from work
-    const categories = document.querySelector('.mw-category')
-    const links = Array.from(categories.querySelectorAll('a'))
-    console.log(typeof(links))
-    const listDe = links
-                        .map(links => links.textContent)
-                        .filter(streetName => streetName.includes('de'))
+    const category = document.querySelector('.mw-category')
+    const links = Array.from(category.querySelectorAll('a'))
+    const de = links.map(link => link.textContent).filter(streetName => streetName.includes('de'))
 
-    console.table(listDe)
-
+    console.table(de)
 
     const people = [
       'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
@@ -85,29 +81,27 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
-
-    const alpha = people.sort((a, b) => {
-      const [aLastName, aFirstName] = a.split(', ')
-      const [bLastName, bFirstName] = b.split(', ')
-      return aLastName > bLastName ? 1 : -1
+    sortLast = people.sort(function(a,b){
+      const [aLast, aFirst] = a.split(', ')
+      const [bLast, bFirst] = b.split(', ')
+      return aLast < bLast ? -1 : 1
     })
-
-    console.table(alpha)
+    console.table(sortLast)
 
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['plane', 'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
-    const sumCarInstances = data.reduce((obj, item) => {
+    const sumItems = data.reduce(function(obj, item){
       if(!obj[item]){
         obj[item] = 0
       }
       obj[item]++
-      return obj
+      return obj;
     }, {})
 
-    console.log(sumCarInstances)
+    console.log(sumItems)
 
   </script>
 </body>
