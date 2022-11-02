@@ -23,3 +23,8 @@ function doThis(click){
 }
 
 
+document.querySelector('#ID').addEventListener('click', doThis)
+
+function doThis(){
+    document.querySelector('.class').classList.toggle('hidden')
+}
