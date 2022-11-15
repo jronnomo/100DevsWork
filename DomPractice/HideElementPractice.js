@@ -28,3 +28,16 @@ document.querySelector('#ID').addEventListener('click', doThis)
 function doThis(){
     document.querySelector('.class').classList.toggle('hidden')
 }
+
+
+//first time getting this right!! LETS GOOOO
+Array.from(document.querySelectorAll('.class1')).forEach(element => element.addEventListener('click', hideThis1))
+
+function hideThis1(click){
+    if(click.target.classList.contains('class2')){
+        document.querySelector('#elementID').style.display = 'none'
+    }
+    else{
+        alert('wrong!')
+    }
+}
