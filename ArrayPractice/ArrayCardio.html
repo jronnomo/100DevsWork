@@ -52,26 +52,18 @@
     //THE WAY YOU CAN TEST YOUR STEPS IS BY ACTUALLY VISITING THE SITE AND RUNNING STEPS IN CONSOLE. DON'T NEED HTML FILE
     //.includes and .textContent are required here
     //Array.from is needed to transform the NodeList to an Array. The Spread ... or Array.from work
-    const category = document.querySelector('.mw-category')
-    const links = Array.from(category.querySelectorAll('a'))
 
-    const de = links.map(link => link.textContent).filter(streetName => streetName.includes('de'))
-    console.log(de)
+
+
+
+
     // 7. sort Exercise
     // Sort the people alphabetically by last name
 
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
-    const data = ['plane', 'car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
-    const addEmUp = data.reduce((acc, item) => {
-      if(!acc[item]){
-        acc[item] = 0
-      }
-      acc[item]++
-      return acc
-    }, {})
 
     console.log(addEmUp)
     // 9 BONUS. Categorize New Member
@@ -89,10 +81,6 @@
 
     let input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9], [78, -2], [55, -2], [55, 8]]
 
-    const openOrSenior = input.map(([age, handicap]) => (age>54 && handicap>7) ? "Senior" : "Open")
-    console.log(openOrSenior)
-
-    
   </script>
 </body>
 </html>
