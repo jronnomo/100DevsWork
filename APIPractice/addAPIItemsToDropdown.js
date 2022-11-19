@@ -17,3 +17,4 @@ const select = document.querySelector('select')
         .catch(err => {
             console.log(`error ${err}`)
         })
+
