@@ -14,3 +14,29 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
 .catch(err => {
     console.log(`error ${err}`)
 })
+
+
+
+
+
+
+
+
+
+
+//const select = document.querySelector('select')
+
+fetch('https://dog.ceo/api/breeds/list/all')
+.then(res => res.json())
+.then(data =>{
+    dogBreeds = Array.from(Object.keys(data.message))
+    dogBreeds.forEach(breed => {
+        const option = document.createElement('option')
+        option.value = breed
+        option.textContent = breed
+        select.appendChild(option)
+    })
+})
+.catch(err =>{
+    alert(`error ${err}`)
+})
