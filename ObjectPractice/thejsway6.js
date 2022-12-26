@@ -83,3 +83,36 @@ account.describe()
 // Use this object to show its description, crediting 250, debiting 80, then show its description again.
 
 // Execution result
+
+
+class Paper{
+    constructor(shape, size){
+        this._size = size,
+        this._shape = shape
+    }
+    get size(){
+        return this._size
+    }
+    get shape(){
+        return this._size
+    }
+    tear(){
+        this._size /= 2
+        console.log(`paper torn in half. size now ${this._size}`)
+    }
+}
+
+class Construction extends Paper{
+    constructor(shape, size, color){
+        super(shape, size)
+        this._color = color
+    }
+    get color(){
+        return this._color
+    }
+    tear(){
+        this._size /= 2
+        console.log(`paper torn in half. size now ${this._size}`)
+        console.log('satisfying construction paper tearrrr')
+    }
+}

@@ -15,18 +15,6 @@ function hideThis(click){
 
 // even when click is on the element in question we still have to querySelector the element ID and add the hidden class to it
 
-
-
-
-
-
-
-
-
-
-
-
-
 Array.from(document.querySelectorAll('class1')).forEach(element => element.addEventListener('click', hideThis ))
 
 function hideThis(click){
