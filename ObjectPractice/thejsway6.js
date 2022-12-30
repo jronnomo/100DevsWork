@@ -116,3 +116,32 @@ class Construction extends Paper{
         console.log('satisfying construction paper tearrrr')
     }
 }
+
+class Paper{
+    constructor(shape, size){
+        this._shape = shape,
+        this._size = size
+    }
+    get shape(){
+        return this._shape
+    }
+    get size(){
+        return this._size
+    }
+    cut(){
+        console.log(`snip snip ${size} in half`)
+    }
+}
+
+class Construction extends Paper{
+    constructor(shape, size, color){
+        super(shape, size)
+        this._color = color
+    }
+    get color(){
+        return this._color
+    }
+    cut(){
+        console.log('whateverrrr')
+    }
+}
