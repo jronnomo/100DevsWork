@@ -145,3 +145,32 @@ class Construction extends Paper{
         console.log('whateverrrr')
     }
 }
+
+class Paper{
+    constructor(shape, size){
+        this._shape = shape,
+        this._size = size
+    }
+    tear(){
+        console.log('TEARRR')
+    }
+    get shape(){
+        return this._shape
+    }
+    get size(){
+        return this._size
+    }
+}
+
+class Construction extends Paper{
+    constructor(shape, size, color){
+        super(shape, size),
+        this._color = color
+    }
+    tear(){
+        console.log('TEAR THE RAINBOW')
+    }
+    get color(){
+        return this._color
+    }
+}

@@ -16,14 +16,6 @@ fetch(`https://dog.ceo/api/breeds/list/all`)
 })
 
 
-
-
-
-
-
-
-
-
 //const select = document.querySelector('select')
 
 fetch('https://dog.ceo/api/breeds/list/all')
