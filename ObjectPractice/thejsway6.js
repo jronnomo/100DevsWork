@@ -174,3 +174,4 @@ class Construction extends Paper{
         return this._color
     }
 }
+
