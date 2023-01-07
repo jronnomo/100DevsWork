@@ -41,3 +41,11 @@ showCircle(150, 150, 100).then(div => {
 //   .finally(() => alert("Promise ready")) // triggers first
 //   .then(result => alert(result)); // <-- .then shows "value"
 // </script>
+
+// Q4 Promise: then versus catch
+// Are these code fragments equal? In other words, do they behave the same way in any circumstances, for any handler functions?
+
+promise.then(f1).catch(f2);
+Versus:
+
+promise.then(f1, f2);
