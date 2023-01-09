@@ -73,3 +73,31 @@ promise.then(f1, f2);
 // That’s because an error is passed down the chain, and in the second code piece there’s no chain below f1.
 
 // In other words, .then passes results/errors to the next .then/catch. So in the first example, there’s a catch below, and in the second one there isn’t, so the error is unhandled.
+
+// Rewrite this callback-based function using Promises:
+
+function loadScript(src, callback) {
+  let script = document.createElement('script'); 
+  script.src = src;
+
+  script.onload = () => callback(null, script); 
+  script.onerror = () => callback(new Error(`Script load error for ${src}`));
+  document.head.append(script);
+}
+
+function loadScript(src){
+return new Promise(function(resolve, reject){
+  let script = document.createElement('script')
+  script.src = src
+  script.onload = () => resolve(script)
+  script.onerror = () => reject(new Error(`Script load error for ${src}`))
+  document.head.append(script)
+})
+}
+
+let promise = loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js')
+promise.then(
+script => alert(`${script.src} is loaded!`),
+error => alert(`Error: ${error.message}`)
+)
+promise.then(script => alert('Aother handler..'))

@@ -49,3 +49,14 @@ promise.then(f1).catch(f2);
 Versus:
 
 promise.then(f1, f2);
+
+// Rewrite this callback-based function using Promises:
+
+function loadScript(src, callback) {
+    let script = document.createElement('script'); 
+    script.src = src;
+
+    script.onload = () => callback(null, script); 
+    script.onerror = () => callback(new Error(`Script load error for ${src}`));
+    document.head.append(script);
+}
