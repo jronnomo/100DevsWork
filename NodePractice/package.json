@@ -1,0 +1,25 @@
+{
+  "name": "node_crash_course",
+  "version": "1.0.0",
+  "description": "node crash course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jronnomo/100DevsWork.git"
+  },
+  "author": "Jerry Ronnau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jronnomo/100DevsWork/issues"
+  },
+  "homepage": "https://github.com/jronnomo/100DevsWork#readme",
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
