@@ -33,3 +33,4 @@ function checkForElement(click){
         alert('wrong!')
     }
 }
+
