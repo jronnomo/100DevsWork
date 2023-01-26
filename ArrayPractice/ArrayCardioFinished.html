@@ -301,6 +301,69 @@
       }, []);
     }
 
+
+      // DESCRIPTION:
+      // Write a method that returns a quote for a give quantity of items.
+
+      // Stock items are represented as a list of objects. Each item has the following properties:
+
+      // quantity (integer)
+      // unit price (decimal)
+      // unit margin (decimal)
+      // As you can see your stock is composed from a single type of items. Batches are bought from different suppliers, so they come with their own unit price and unit margin (i.e. your profit). Available items will be passed to the constructor of the Quoter class as an array or list.
+
+      // Your task is to write getQuote method. It should return the best price for a given quantity of items. However, your boss is rather greedy, so the best quote is one that maximises your margin. Note that calls to getQuote method should not modify stock passed into the Quoter constructor, i.e. multiple call to getQuote should operate on the same stock.
+
+      // Your method should return one of the following strings:
+
+      // "Your order cannot be fulfilled, try lower quantity" if you don't have enough stock, or
+      // "Your best quote for $N items is $PRICE" if you have enough items in stock. The price should include cents.
+      // Some examples to get you started:
+
+      // const quoter = new Quoter([]);
+      // quoter.getQuote(1); // should return "Your order cannot be fulfilled, try lower quantity"
+
+      // const items = [{ quantity: 10, unitPrice: 100, unitMargin: 1 }, { quantity: 10, unitPrice: 110, unitMargin: 1.1 }];
+      // const quoter = new Quoter(items);
+      // quoter.getQuote(10); //should return "Your best quote for 10 items is 1100.00"
+
+
+    class Quoter {
+        constructor(items) {
+          this.items = items;
+        }
+        getQuote(quantity) {
+          let price = 0;
+          if(this.items == undefined) return 'Your order cannot be fulfilled, try lower quantity';
+          const sorted = this.items.sort((a,b) => a.unitMargin - b.unitMargin);
+          const total = sorted.reduce((acc, prev)=>acc + prev.quantity,0);
+          if(total < quantity) return 'Your order cannot be fulfilled, try lower quantity';
+          let amount = quantity;
+          for(let i=sorted.length-1;i>=0;i--){
+            if(amount < sorted[i].quantity){
+              price += amount * sorted[i].unitPrice;
+              break;
+            }
+            if(amount >= sorted[i].quantity){
+              price += sorted[i].quantity * sorted[i].unitPrice;
+              amount -=  sorted[i].quantity;
+            }
+          }
+          return `Your best quote for ${quantity} items is ${price}.00`
+        }
+      }
+
+
+// DESCRIPTION:
+// Your task is to write a function, smartSum, that returns the sum of an arbitrary number of arguments. But be careful, some of your arguments can be arrays of numbers or nested arrays.
+
+// smartSum(1,2,3,[4,5],6); // returns 21
+// smartSum(1,2,[[3,4],5],6); // returns 21
+
+function smartSum(...num){
+    return num.reduce((acc, item) => acc + (typeof item === 'number' ? item : smartSum(...item)), 0)
+}
+
   </script>
 </body>
 </html>
