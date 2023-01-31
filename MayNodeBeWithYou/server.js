@@ -2,7 +2,9 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
 const MongoClient = require('mongodb').MongoClient
-const dbConnectString = 'mongodb+srv://jronnomo:th3Rh1no@cluster0.ekdrlak.mongodb.net/?retryWrites=true&w=majority'
+//required to use our .env file (hidden from GitHub)
+require('dotenv').config()
+const dbConnectString = process.env.DB_STRING
 
 MongoClient.connect(dbConnectString, { useUnifiedTopology: true })
     .then(client => {
