@@ -76,6 +76,8 @@ class VM {
 
 const vm = (version = '') => {
     // default value
+    //the 2nd half of this ternary conditional is for a provided value of 1-2 numbers. It adds the required 0's because it'll snip
+    //and return only the required amount of numbers anyway
     version += version.trim().length === 0 ? '0.0.0' : '.0.0.0';
 
     //version = '5.1.0'
@@ -86,7 +88,7 @@ const vm = (version = '') => {
 
     let versions = version
         .split('.')
-        .filter((str) => str !== '')
+    //    .filter((str) => str !== '')
         .slice(0, 3);
     // handle version is not number/decimal
     versions = versions.map((v) => {
