@@ -1,5 +1,10 @@
+const { application } = require('express');
 const express = require('express')
 const router = express.Router()
+const partials = require('express-partials')
+
+//load the express-partials middleware
+router.use(partials());
 
 // @desc Login/Landing page
 // @router GET /
@@ -10,10 +15,7 @@ const router = express.Router()
 //   });
 
   router.get('/', (req, res) => {
-    res.render('login', {
-        layout: 'main',
-        body: '<h1>Login</h1>'
-    });
+    res.render('login');
 });
 
 
