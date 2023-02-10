@@ -41,18 +41,18 @@ const vm = (version = '')
 
 // Your implementation will be used like this:
 
-// var citizen = {
-//   sleep: function(){ return "zzZ..."; },
-//   panic: function(){ return "AaAaAaAa!"; }
-// };
+var citizen = {
+  sleep: function(){ return "zzZ..."; },
+  panic: function(){ return "AaAaAaAa!"; }
+};
 
-// var veteran = Object.create(citizen,{
-//         panic: {
-//           value: function(){
-//             return "SNAFU";
-//           }
-//         }
-//       });
+var veteran = Object.create(citizen,{
+        panic: {
+          value: function(){
+            return "SNAFU";
+          }
+        }
+      });
 // INFORMATION
 // Formal description of Object.create function in ECMAScript 5.1
 // Prototype-based inheritance description in ECMAScript 5.1
@@ -79,8 +79,8 @@ const vm = (version = '')
 // returns newly created object
 
   Object.create = function(prototype, properties) {
-    //Your code goes here
-    //And remember: you need not to reinvent Object.defineProperties on your own!
+    if(prototype === undefined) throw Error('Prototype cannot be undefined');
+    return Object.defineProperties({__proto__:prototype}, properties)
   };
 
 
