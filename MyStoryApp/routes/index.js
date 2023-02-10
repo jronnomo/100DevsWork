@@ -15,14 +15,15 @@ router.use(partials());
 //   });
 
   router.get('/', (req, res) => {
-    res.render('login');
+    res.render('login')
 });
 
 
 // @desc Dashboard
 // @router GET /dashboard
 router.get('/dashboard', (req, res) => {
-    res.render('dashboard')
+    res.render('dashboard',
+    {title: "Dashboard"});
 })
 
 module.exports = router
