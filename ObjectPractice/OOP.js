@@ -1,6 +1,9 @@
 // DESCRIPTION:
 // In this kata we are going to mimic a software versioning system.
 
+const { release } = require("os");
+const path = require("path");
+
 // You have to implement a vm function returning an object.
 
 // It should accept an optional parameter that represents the initial version. The input will be in one of the following formats: "{MAJOR}", "{MAJOR}.{MINOR}", or "{MAJOR}.{MINOR}.{PATCH}". More values may be provided after PATCH but they should be ignored. If these 3 parts are not decimal values, an exception with the message "Error occured while parsing version!" should be thrown. If the initial version is not provided or is an empty string, use "0.0.1" by default.
@@ -13,7 +16,6 @@
 // rollback() - return the MAJOR, MINOR, and PATCH to their values before the previous major/minor/patch call, or throw an exception with the message "Cannot rollback!" if there's no version to roll back to
 // release() - return a string in the format "{MAJOR}.{MINOR}.{PATCH}"
 // May the binary force be with you!
-
 
 const vm = (version = '')
 
