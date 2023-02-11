@@ -4,6 +4,7 @@ const morgan = require('morgan')
 //const exphbs = require('express-handlebars')
 const connectDB = require('./config/db')
 const path = require('path')
+const app = express()
 
 //Load config
 dotenv.config({ path: './config/config.env' })
@@ -11,7 +12,6 @@ dotenv.config({ path: './config/config.env' })
 connectDB()
 
 //Logging
-const app = express()
 if (process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'))
 }
