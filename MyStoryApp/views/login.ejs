@@ -4,17 +4,25 @@
     	<meta charset="utf-8">
     	<meta name="description" content="Your description goes here">
     	<meta name="keywords" content="one, two, three">
-
         <%- include('./layouts/title.ejs', {title: 'Login'}) %>
-
 		<!-- external CSS link
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css"> -->
         <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="/css/style.css">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 	</head>
 	<body>
-
-        <%- include('./layouts/header.ejs', {headerTitle :'Login'}) %>
-        <script type="text/javascript" src="js/main.js"></script>
+        <div class="container login-container">
+            <div class="card">
+                <div class="card-content">
+                <!-- <%- include('./layouts/header.ejs', {body :'Login'}) %> -->
+                <%- include('./layouts/loginBody.ejs', {body :'Login'}) %>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

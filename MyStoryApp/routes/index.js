@@ -22,8 +22,7 @@ router.use(partials());
 // @desc Dashboard
 // @router GET /dashboard
 router.get('/dashboard', (req, res) => {
-    res.render('dashboard',
-    {title: "Dashboard"});
+    res.render('dashboard')
 })
 
 module.exports = router
