@@ -1,0 +1,28 @@
+<!-- If there are stories -->
+<% if (stories && stories.length > 0) { %>
+    <!-- Create table -->
+    <table class="striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through Stories -->
+            <% for (var i = 0; i < stories.length; i++) { %>
+                <tr>
+                    <td><a href="/stories/<%= stories[i].id %>"></a><%=stories[i].title%></td>
+                    <td><%= stories[i].createdAt %></td>
+                    <td><span class='dash-status'><%= stories[i].status %></span></td>
+                    <td></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+            <!-- Otherwise let's print no stories -->
+        <% } else { %>
+            <p>You have not created any stories</p>
+        <% } %>
