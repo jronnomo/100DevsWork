@@ -4,7 +4,7 @@
     	<meta charset="utf-8">
     	<meta name="description" content="Your description goes here">
     	<meta name="keywords" content="one, two, three">
-        <%- include('./layouts/title.ejs', {title: 'Login'}) %>
+        <%- include('./partials/title.ejs', {title: 'Login'}) %>
 		<!-- external CSS link
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css"> -->
@@ -19,8 +19,7 @@
         <div class="container login-container">
             <div class="card">
                 <div class="card-content">
-                <!-- <%- include('./layouts/header.ejs', {body :'Login'}) %> -->
-                <%- include('./layouts/loginBody.ejs', {body :'Login'}) %>
+                <%- include('./partials/loginBody.ejs', {body :'Login'}) %>
                 </div>
             </div>
         </div>

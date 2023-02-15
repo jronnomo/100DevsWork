@@ -18,10 +18,13 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
     res.redirect('/dashboard')
 })
 
+//TODO why do I have to include an error parameter for logout when passport gives a logout method to the request object?
 // @desc Logout User
 // @router GET /auth/logout
-router.get('/logout', (req, res) => {
-    req.logout()
+router.get('/logout', (req, res, next) => {
+    req.logout((error) => {
+        if (error) {return next(error)}
+    })
     res.redirect('/')
 })
 
