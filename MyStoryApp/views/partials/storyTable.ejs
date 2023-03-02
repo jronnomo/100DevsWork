@@ -15,14 +15,15 @@
             <% for (var i = 0; i < stories.length; i++) { %>
                 <tr>
                     <td><a href="/stories/<%= stories[i].id %>"></a><%=stories[i].title%></td>
-                    <td><%= stories[i].createdAt %></td>
+                    <td><%= locals.helpers.formatDate(stories[i].createdAt, 'MMMM Do YYYY, h:mm:ss a') %></td>
+                    <!-- 'MMMM Do YYYY,h:mm:ss a' -->
                     <td><span class='dash-status'><%= stories[i].status %></span></td>
                     <td></td>
                 </tr>
             <% } %>
         </tbody>
     </table>
-            <!-- Otherwise let's print no stories -->
-        <% } else { %>
-            <p>You have not created any stories</p>
-        <% } %>
+<!-- Otherwise let's print no stories -->
+<% } else { %>
+    <p>You have not created any stories</p>
+<% } %>
