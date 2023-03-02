@@ -28,11 +28,16 @@ if (process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'))
 }
 
+
 // tutorial uses Handlebars, but we use EJS -- Template Engine
 // app.engine('.hbs', exphbs({ defaultLayout: 'main', extname: '.hbs'}))
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 //app.engine('.ejs', require('ejs').renderFile);
+
+//EJS Helper
+const helpers = require('./helpers/ejs')
+app.locals.helpers = helpers
 
 //Create session store
 const store = MongoStore.create({mongoUrl: process.env.MONGO_URI, collectionName: 'sessions'})
@@ -48,6 +53,12 @@ app.use(session({
 //Passport Middleware
 app.use(passport.initialize())
 app.use(passport.session())
+
+//Set global variable
+app.use((req, res, next) => {
+    res.locals.user = req.user || null
+    next()
+})
 
 //Static Folder
 app.use(express.static(path.join(__dirname, 'public')))
