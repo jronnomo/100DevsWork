@@ -7,7 +7,6 @@ const path = require('path')
 const passport = require('passport')
 const session = require('express-session')
 const methodOverride = require('method-override')
-const { default: mongoose } = require('mongoose')
 const MongoStore = require('connect-mongo')
 
 //Load config
@@ -53,6 +52,7 @@ const helpers = require('./helpers/ejs')
 app.locals.helpers = helpers
 
 //Create session store
+//with v4 connect-mongo, no longer use Mongoose
 const store = MongoStore.create({mongoUrl: process.env.MONGO_URI, collectionName: 'sessions'})
 
 //Session Middleware
