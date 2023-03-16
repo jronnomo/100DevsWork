@@ -70,3 +70,4 @@ fetch('https://dog.ceo/api/breeds/list/all')
 .catch(err => {
     console.log(`Error is ${err}`)
 })
+
