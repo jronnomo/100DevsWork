@@ -1,0 +1,28 @@
+{
+  "coupons": [
+    {
+      "id": 1,
+      "text": "Food Shopping",
+      "day": "Feb 5th at 2:30pm",
+      "reminder": false
+    },
+    {
+      "id": 3,
+      "text": "Pool clean",
+      "day": "June 14th at 12:00pm",
+      "reminder": false
+    },
+    {
+      "text": "asf",
+      "day": "asdfg",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "text": "zdfg",
+      "day": "agr",
+      "reminder": true,
+      "id": 6
+    }
+  ]
+}
